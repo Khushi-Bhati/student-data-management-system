@@ -1,0 +1,90 @@
+:root {
+  --primary: #3b4cb8;
+  --primary-dark: #2f3e9e;
+  --danger: #dc2626;
+  --bg: #f4f6fb;
+  --text: #ffffff;
+  --muted: rgba(255,255,255,0.7);
+}
+
+.sidebar {
+  width: 260px;
+  height: 100vh;
+  background: var(--primary);
+  padding: 20px;
+  color: var(--text);
+  position: fixed;
+  left: 0;
+  top: 0;
+}
+
+/* Logo */
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 22px;
+  font-weight: bold;
+  margin-bottom: 35px;
+}
+
+/* Menu */
+.menu-title {
+  font-size: 12px;
+  letter-spacing: 1px;
+  color: var(--muted);
+  margin-bottom: 10px;
+  text-transform: uppercase;
+}
+
+.menu-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 14px;
+  border-radius: 10px;
+  margin-bottom: 10px;
+  cursor: pointer;
+  transition: 0.3s;
+  color: white;
+  text-decoration: none;
+  
+}
+
+.menu-item i {
+  font-size: 16px;
+
+}
+
+.logout-btn{
+  color:blue;
+}
+
+/* Hover & Active */
+.menu-item:hover,
+.menu-item.active {
+  background: var(--primary-dark);
+}
+
+/* Delete */
+.menu-item.delete:hover {
+  background: var(--danger);
+  
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .sidebar {
+    width: 70px;
+  }
+
+  .menu-item span,
+  .logo span,
+  .menu-title {
+    display: none;
+  }
+
+  .menu-item {
+    justify-content: center;
+  }
+}

@@ -1,0 +1,227 @@
+/* ================= ROOT COLORS ================= */
+:root {
+  --primary: #3b4cb8;
+  --primary-dark: #2f3e9e;
+  --success: #10b981;
+  --danger: #ef4444;
+  --bg: #f4f6fb;
+  --card: #ffffff;
+  --text: #111827;
+  --muted: #6b7280;
+  --border: #e5e7eb;
+}
+
+/* ================= CONTAINER ================= */
+.list-container {
+  background: var(--card);
+  padding: 25px;
+  border-radius: 16px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+  max-width: 1300px;
+  margin-left: 10% ; /* centered for all screens */
+}
+
+/* ================= TITLE ================= */
+.list-container h2 {
+  margin-bottom: 20px;
+  color: var(--primary);
+  font-size: 22px;
+  font-weight: 600;
+  text-align: center;
+}
+
+/* ================= TABLE ================= */
+.student-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.student-table thead {
+  background: var(--bg);
+}
+
+.student-table th,
+.student-table td {
+  padding: 14px 16px;
+  text-align: left;
+  font-size: 14px;
+}
+
+.student-table th {
+  color: #374151;
+  font-weight: 600;
+}
+
+.student-table td {
+  color: #4b5563;
+  border-bottom: 1px solid var(--border);
+}
+
+/* Row Hover */
+.student-table tbody tr:hover {
+  background: #f9fafb;
+}
+
+/* Action column */
+.student-table th:last-child,
+.student-table td:last-child {
+  text-align: center;
+  white-space: nowrap;
+}
+
+/* ================= BUTTONS ================= */
+.btn-edit {
+  background: var(--success);
+  color: #ffffff;
+  border: none;
+  padding: 7px 14px;
+  border-radius: 8px;
+  font-size: 13px;
+  cursor: pointer;
+  margin-right: 8px;
+  transition: 0.3s;
+}
+
+.btn-edit:hover {
+  background: #059669;
+}
+
+.btn-delete {
+  background: var(--danger);
+  color: #ffffff;
+  border: none;
+  padding: 7px 14px;
+  border-radius: 8px;
+  font-size: 13px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.btn-delete:hover {
+  background: #dc2626;
+}
+
+/* ================= LOADING ================= */
+.loading-text {
+  text-align: center;
+  padding: 20px;
+  font-size: 15px;
+  color: var(--muted);
+}
+
+/* ================= PAGINATION ================= */
+.pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+  margin-top: 25px;
+  flex-wrap: wrap; /* wrap on smaller screens */
+}
+
+.page-btn {
+  background: var(--primary);
+  color: #ffffff;
+  border: none;
+  padding: 8px 18px;
+  border-radius: 8px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.page-btn:hover {
+  background: var(--primary-dark);
+}
+
+.page-btn:disabled {
+  background: #c7cbe9;
+  cursor: not-allowed;
+}
+
+.page-info {
+  font-size: 14px;
+  color: #374151;
+  font-weight: 500;
+}
+
+/* ================= EMPTY STATE ================= */
+.student-table tbody tr td[colspan] {
+  padding: 20px;
+  color: var(--muted);
+  font-size: 14px;
+  text-align: center;
+}
+
+/* ================= RESPONSIVE ================= */
+@media (max-width: 1024px) {
+  .list-container {
+    padding: 20px;
+    margin: 15px;
+  }
+
+  .student-table th,
+  .student-table td {
+    padding: 12px;
+    font-size: 13px;
+  }
+
+  .btn-edit,
+  .btn-delete {
+    padding: 6px 12px;
+    font-size: 12px;
+  }
+}
+
+@media (max-width: 768px) {
+  .student-table,
+  .student-table thead,
+  .student-table tbody,
+  .student-table th,
+  .student-table td,
+  .student-table tr {
+    display: block;
+    width: 100%;
+  }
+
+  .student-table thead {
+    display: none; /* hide table header */
+  }
+
+  .student-table tr {
+    margin-bottom: 15px;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .student-table td {
+    padding: 10px;
+    text-align: right;
+    position: relative;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .student-table td::before {
+    content: attr(data-label);
+    position: absolute;
+    left: 10px;
+    width: 50%;
+    padding-left: 10px;
+    font-weight: 600;
+    text-align: left;
+    color: #374151;
+  }
+
+  .pagination {
+    flex-direction: column;
+    gap: 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  .btn-edit,
+  .btn-delete {
+    padding: 5px 10px;
+    font-size: 11px;
+    margin-right: 5px;
+  }
+}
